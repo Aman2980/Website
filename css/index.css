@@ -1,0 +1,99 @@
+/* the animation at the bottom of the page */
+.marquee {
+  margin-top: 10%;
+  margin-bottom: 0%;
+  background: linear-gradient(90deg, rgb(253, 206, 118) 0%, rgb(74, 144, 250) 100%);
+  overflow: hidden;
+  width: auto;
+  white-space: nowrap;
+  padding: 30px;
+  border-top: 2px ridge;
+}
+
+/* tells the browser to account for any border and padding */
+* { box-sizing: border-box }
+
+/* text inside the animation */
+.marquee p {
+  color: rgb(255, 255, 255);
+  font-family: Copperplate;
+  font-size: 25px;
+  padding-left: 100%;
+  font-weight: 900;
+  display: inline-block;
+  animation: animate 10s linear infinite;
+  margin: auto;
+}
+
+/* used to create animations */
+  @keyframes animate {
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+
+  .game-gif{
+    width: 100%;
+
+  }
+
+
+
+  /* gif on the page */
+  .soko{
+    width: 100%;
+    max-width: 330px;
+    float: right;
+    margin-left: 40px;
+    margin-right: 5%;
+    border-radius: 20px;
+    transition: 0.30s;
+    box-shadow: 3px 3px 25px 5px rgba(0, 0, 0, .5);
+  }
+
+  .hero-text{
+    font-size: 1.2em;
+    margin-right: 5px;
+    line-height: 2.3;
+    margin: 1em 1.5em 1.5em;
+    color: #5e5e5e;
+    font-family: Trebuchet MS;
+
+  }
+
+
+/* media query used to make the page responsive
+   changes the styling of elements when it hits 
+   certain breakpoint */
+  @media screen and (max-width: 850px) {
+    .hero-text {
+      display: inline-block;
+      clear: left;
+      margin: 4% 0;
+      transition: 0.25s;
+      width: 100%;
+      padding: 0 25px;
+      line-height: 2;
+    }
+    .soko {
+      display:block;
+      max-width: 250px;
+      height: 400px;
+      float: revert;
+      margin: 0 auto;
+      transition: 0.30s;
+      }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+  

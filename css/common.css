@@ -1,0 +1,225 @@
+/* body style */
+body {
+  margin: 0%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(231, 223, 209);
+}
+
+/* common heading for each page with the class= "heading" */
+.heading{
+  text-align: center;
+  font-family: Trebuchet MS;
+  display: inline-block;
+  color: #726a95;
+  letter-spacing: .38rem;
+  font-size: 6vmin;
+  margin-top: 18%;
+  margin-bottom: 3%;
+  transition: 1s;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 700px) {
+  .heading{
+    display: inline-block;
+    color: #726a95;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3.5%;
+    transition: 1s;
+  }
+}
+/* page's header */
+  header {
+    background-color: #726a95;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 5px 15px -1px rgb(24, 24, 24);
+  }
+
+  /* hide it */
+  .nav-toggle {
+    display: none;
+  }
+  
+  /* hamburger menu */
+  .nav-toggle-label {
+    margin-top: 1.8em;
+    margin-right: 1.5em;
+    display: flex;
+    justify-content: end;
+    height: 100%;
+    align-items: center;
+  }
+  /* creates and styles the hamburger menu */
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 5px;
+    width: 2.2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 9px;
+  }
+
+  .nav-toggle-label span::after {
+    top: 9.2px;
+  }
+
+  /* logo */
+  .logo {
+    float: left;
+    margin-left: 2em;
+    margin-top: 0.25%;
+    margin-bottom: 0.25%;
+  }
+
+  /* navigation bar */
+  nav {
+    position: absolute;
+    text-align: right;
+    top: 100%;
+    right: 0;
+    background-color: #726a95;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+  
+  /* ul lists inside nav */
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+  }
+  
+  nav li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 1.4em; 
+  }
+
+  /* nav links */
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 100ms ease-in-out 250ms;
+  }
+  /* links hover effect */
+  nav a:hover {
+    color: black;
+  }
+/* sets the colour of the active link so user can see which they are on */
+  nav a.active{
+    background-color: rgb(225, 166, 57);
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+
+/* when toggle state in nav set to checked */
+  .nav-toggle:checked ~ nav {
+    display: block;
+    transform: scale(1, 1);
+  }
+  /* animation nav links */
+  .nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+
+  /* same as above but for desktop view */
+  @media screen and (min-width: 800px) {
+    .nav-toggle-label {
+      display: none;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px) 1fr;
+      padding: 40x;
+    }
+    nav a.active{
+      background-color: rgb(225, 166, 57);
+      padding: 12px 15px;
+      border-radius: 5px;
+    }
+  
+    .logo {
+      float: left;
+      margin-left: 2em;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+  
+    nav {
+      all: unset;
+      grid-column: 3/2;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-right: 0.5em;
+    }
+    
+    nav a {
+      opacity: 1;
+      position: relative;
+    }
+  
+    nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+  
+    nav li {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-right: 1.4em; 
+    }
+  
+    nav a::before {
+      content: "";
+      display: block;
+      height: 3px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -0.60em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+  
+    nav a:hover::before {
+      transform: scale(1, 1);
+    }
+  }
+  /* footer at the bottom of the page */
+  footer{
+    margin-top: auto;
+    background-color: #726a95;
+    color: white;
+    text-align: center;
+
+  }
